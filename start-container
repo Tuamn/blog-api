@@ -1,0 +1,14 @@
+#!/bin/bash
+
+container_name=tuanm-blog-api
+image_version=1.1
+
+docker stop $container_name
+docker rm $container_name
+
+docker run -d \
+    --name $container_name \
+    --restart always \
+    -v ~/@storage/blog.tuanm.dev/data:/tuanm/api/blog/data \
+    -p 8080:6969 \
+    tuanm/blog-api:$image_version

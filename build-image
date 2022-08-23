@@ -1,0 +1,5 @@
+#!/bin/bash
+
+image_version=1.1
+
+docker build . -t tuanm/blog-api:$image_version
